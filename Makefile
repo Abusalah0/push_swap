@@ -1,7 +1,6 @@
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
-SRC = init_prog.c main.c parallel_stack_ops.c  shared_stack_ops.c  stack_a_ops.c error_handling.c  input_parsing.c  node_ops.c  search_stacks.c \
-	sorting.c stack_b_ops.c
+CFLAGS = -Wall -Wextra -Werror -g
+SRC = main.c  shared_stack_ops.c  error_handling.c  input_parsing.c  search_stacks.c stack_ops.c push_swap_ops_a.c push_swap_ops_b.c sorting.c node_ops.c
 SRCS = $(addprefix src/, $(SRC))
 OBJSDIR = obj
 OBJS = $(addprefix $(OBJSDIR)/, $(notdir $(SRCS:.c=.o)))

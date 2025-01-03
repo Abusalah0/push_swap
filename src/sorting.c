@@ -5,109 +5,161 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/23 15:51:35 by abdsalah          #+#    #+#             */
-/*   Updated: 2024/12/23 23:45:11 by abdsalah         ###   ########.fr       */
+/*   Created: 2025/01/03 19:13:27 by abdsalah          #+#    #+#             */
+/*   Updated: 2025/01/03 21:43:13 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void sort_three(t_item **stack)
+static void	rev_rotate_both(t_item **a,
+								t_item **b,
+								t_item *cheapest_node)
 {
-    t_item *max;
-    
-    max = get_max(*stack);
-    if (max == *stack)
-    {
-        ra(stack);
-    }
-    else if (max == (*stack)->next)
-    {
-        rra(stack);
-    }
-    if ((*stack)->val > (*stack)->next->val)
-        sa(stack);
+	while (*b != cheapest_node->target
+		&& *a != cheapest_node)
+		rrr(a, b);
+	current_index(*a);
+	current_index(*b);
 }
 
-void    update_a(t_item *a_stack, t_item *b_stack)
+void	min_on_top(t_item **a_stack)
 {
-    set_node_index(a_stack);
-    set_node_index(b_stack);
-    set_target_node(a_stack, b_stack);
-    cost_analysis(a_stack, b_stack);
-    set_cheapest(a_stack);
+	while ((*a_stack)->val != get_min(*a_stack)->val)
+	{
+		if (get_min(*a_stack)->above_median) //Rotate or reverse rotate according to the position of the node on the median
+			ra(a_stack, true);
+		else
+			rra(a_stack, true);
+	}
 }
 
-void    set_target_node_b(t_item *a_stack, t_item *b_stack)
+void set_target_b (t_item *a_stack, t_item *b_stack)
 {
-    t_item *cursor;
+    t_item *curser;
     t_item *target;
-    int closest_max;
+    int     closest_match;
 
     while (b_stack)
     {
-        closest_max = INT_MAX;
-        cursor = a_stack;
-        while (cursor)
+        closest_match = INT_MAX;
+        curser = a_stack;
+        while (curser)
         {
-        if (cursor->val > b_stack->val && cursor->val < closest_max)
-        {
-            closest_max = cursor->val;
-            target = cursor;
+            if (curser->val < closest_match && curser->val > b_stack->val)
+            {
+                closest_match = curser->val;
+                target = curser;
+            }
+            curser = curser->next;
         }
-            cursor = cursor->next;
-        }
-        if (closest_max == INT_MAX)
+        if (closest_match == INT_MAX)
             b_stack->target = get_min(a_stack);
         else
             b_stack->target = target;
         b_stack = b_stack->next;
     }
+        
 }
-void    update_b(t_item *a_stack, t_item *b_stack)
+void update_nodes_b(t_item *a_stack, t_item *b_stack)
 {
-    set_node_index(a_stack);
-    set_node_index(b_stack);
-    set_target_node_b(a_stack, b_stack);
+    current_index(b_stack);
+    current_index(a_stack);
+    set_target_b(a_stack, b_stack);
+}
+
+
+void prep_for_push(t_item **stack, t_item *top, char stack_name)
+{
+    while (*stack != top)
+    {
+        if (stack_name == 'a')
+        {
+            if (top->above_median)
+                ra(stack, true);
+            else
+                rra(stack, true);
+        }
+        else if (stack_name == 'b')
+        {
+            if (top->above_median)
+                rb(stack, true);
+            else
+                rrb(stack, true);
+        }
+    }
+}
+    
+void    rotate_both(t_item **a_stack, t_item **b_stack, t_item *cheapest)
+{
+    while(*b_stack != cheapest->target && *a_stack != cheapest)
+    {
+        rr(a_stack, b_stack);
+    }
+    current_index(*a_stack);
+    current_index(*b_stack);
 }
 void move_a_to_b(t_item **a_stack, t_item **b_stack)
 {
     t_item *cheapest;
-
+    
     cheapest = get_cheapest(*a_stack);
     if (cheapest->above_median && cheapest->target->above_median)
-        rotate_both(a_stack, b_stack, cheapest);
+    {
+       rotate_both(a_stack, b_stack, cheapest);
+    }
     else if (!cheapest->above_median && !cheapest->target->above_median)
-        rev_rotate_both(a_stack,b_stack,cheapest);
+    {
+        rev_rotate_both(a_stack, b_stack, cheapest);
+    }
     prep_for_push(a_stack, cheapest, 'a');
-    prep_for_push(b_stack, cheapest, 'b');
-    pb(a_stack, b_stack);
+    prep_for_push(b_stack, cheapest->target, 'b');
+    pb(a_stack, b_stack, true);
 }
-void    move_b_to_a(t_item **a_stack, t_item **b_stack)
+
+void move_b_to_a(t_item **a_stack, t_item **b_stack)
 {
     prep_for_push(a_stack, (*b_stack)->target, 'a');
-    pa(a_stack, b_stack);
+    pa(a_stack, b_stack, true);
 }
+
+void sort_three(t_item **stack)
+{
+    t_item *max;
+
+    max = get_max(*stack);
+    if(max == *stack)
+    {
+        ra(stack, true);
+    }
+    else if (max == (*stack)->next)
+    {
+        rra(stack, true);
+    }
+    if ((*stack)->val > (*stack)->next->val)
+        sa(stack, true);
+}
+
 void    turk_sort(t_item **a_stack, t_item **b_stack)
 {
-    int stack_size;
+    int size;
 
-    stack_size = get_size(*a_stack);
-    if (stack_size > 3 && !is_sorted(*a_stack))
-        pb(a_stack, b_stack);
-    if (--stack_size > 3 && !is_sorted(*a_stack))
-        pb(a_stack, b_stack);
-    while (--stack_size > 3 && !is_sorted(*a_stack))
+    size = get_size(*a_stack);
+    if (size > 3)
+        pb(a_stack, b_stack, true);
+    if(--size > 3 && !is_sorted(*a_stack))
+        pb(a_stack, b_stack, true);
+    while(--size > 3 && !is_sorted(*a_stack))
     {
-        update_a(*a_stack, *b_stack);
+        update_nodes_a(*a_stack, *b_stack);
         move_a_to_b(a_stack, b_stack);
     }
     sort_three(a_stack);
     while (*b_stack)
     {
-        update_b(*a_stack, *b_stack);
+        update_nodes_b(*a_stack, *b_stack);
         move_b_to_a(a_stack, b_stack);
     }
-    set_node_index(*a_stack);
+    current_index(*a_stack);
     min_on_top(a_stack);
 }

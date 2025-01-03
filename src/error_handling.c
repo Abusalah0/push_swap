@@ -6,12 +6,11 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 15:56:57 by abdsalah          #+#    #+#             */
-/*   Updated: 2024/12/23 15:28:34 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/03 18:23:40 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-#include <stdio.h>
 
 void error_exit(char *str, void **allocated_mem, int count)
 {
@@ -24,7 +23,7 @@ void error_exit(char *str, void **allocated_mem, int count)
     }
     if (allocated_mem)
         free(allocated_mem);
-    perror(str);
+    printf("%s\n",str);
     exit(EXIT_FAILURE);
 }
 

@@ -6,7 +6,7 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 15:56:57 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/03 18:23:40 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/05 21:14:53 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,6 @@ void error_exit(char *str, void **allocated_mem, int count)
         free(allocated_mem);
     printf("%s\n",str);
     exit(EXIT_FAILURE);
-}
-
-
-void free_split(char **split)
-{
-    int i = 0;
-
-    while (split[i])
-        free(split[i++]);
-    free(split);
 }
 
 void    free_stack(t_item *stack)

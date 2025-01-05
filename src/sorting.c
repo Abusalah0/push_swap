@@ -6,22 +6,12 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 19:13:27 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/03 21:43:13 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/05 21:21:30 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static void	rev_rotate_both(t_item **a,
-								t_item **b,
-								t_item *cheapest_node)
-{
-	while (*b != cheapest_node->target
-		&& *a != cheapest_node)
-		rrr(a, b);
-	current_index(*a);
-	current_index(*b);
-}
 
 void	min_on_top(t_item **a_stack)
 {
@@ -32,40 +22,6 @@ void	min_on_top(t_item **a_stack)
 		else
 			rra(a_stack, true);
 	}
-}
-
-void set_target_b (t_item *a_stack, t_item *b_stack)
-{
-    t_item *curser;
-    t_item *target;
-    int     closest_match;
-
-    while (b_stack)
-    {
-        closest_match = INT_MAX;
-        curser = a_stack;
-        while (curser)
-        {
-            if (curser->val < closest_match && curser->val > b_stack->val)
-            {
-                closest_match = curser->val;
-                target = curser;
-            }
-            curser = curser->next;
-        }
-        if (closest_match == INT_MAX)
-            b_stack->target = get_min(a_stack);
-        else
-            b_stack->target = target;
-        b_stack = b_stack->next;
-    }
-        
-}
-void update_nodes_b(t_item *a_stack, t_item *b_stack)
-{
-    current_index(b_stack);
-    current_index(a_stack);
-    set_target_b(a_stack, b_stack);
 }
 
 
@@ -89,16 +45,7 @@ void prep_for_push(t_item **stack, t_item *top, char stack_name)
         }
     }
 }
-    
-void    rotate_both(t_item **a_stack, t_item **b_stack, t_item *cheapest)
-{
-    while(*b_stack != cheapest->target && *a_stack != cheapest)
-    {
-        rr(a_stack, b_stack);
-    }
-    current_index(*a_stack);
-    current_index(*b_stack);
-}
+   
 void move_a_to_b(t_item **a_stack, t_item **b_stack)
 {
     t_item *cheapest;
@@ -117,11 +64,6 @@ void move_a_to_b(t_item **a_stack, t_item **b_stack)
     pb(a_stack, b_stack, true);
 }
 
-void move_b_to_a(t_item **a_stack, t_item **b_stack)
-{
-    prep_for_push(a_stack, (*b_stack)->target, 'a');
-    pa(a_stack, b_stack, true);
-}
 
 void sort_three(t_item **stack)
 {

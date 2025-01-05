@@ -1,6 +1,18 @@
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -g
-SRC = main.c  shared_stack_ops.c  error_handling.c  input_parsing.c  search_stacks.c stack_ops.c push_swap_ops_a.c push_swap_ops_b.c sorting.c node_ops.c
+SRC = main.c\
+	parallel_stack_ops.c \
+	error_handling.c \
+	input_parsing.c \
+	sort_helpers_for_a.c \
+	stack_ops.c \
+	sorting.c \
+	node_ops.c \
+	sort_helpers_for_b.c \
+	a_stack_ops.c \
+	b_stack_ops.c \
+	search_stacks.c\
+
 SRCS = $(addprefix src/, $(SRC))
 OBJSDIR = obj
 OBJS = $(addprefix $(OBJSDIR)/, $(notdir $(SRCS:.c=.o)))

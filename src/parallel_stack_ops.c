@@ -5,47 +5,52 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/24 16:14:24 by abdsalah          #+#    #+#             */
-/*   Updated: 2024/12/23 18:52:45 by abdsalah         ###   ########.fr       */
+/*   Created: 2025/01/03 18:43:02 by abdsalah          #+#    #+#             */
+/*   Updated: 2025/01/05 21:15:39 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-
-
-int	ss(t_item **stack_a, t_item **stack_b)
+void    ss(t_item **a_stack, t_item **b_stack)
 {
-	int	a;
-	int	b;
-
-	a = sa(stack_a);
-	b = sb(stack_b);
-	if (a && b)
-		return (1);
-	return (0);
+    sa(a_stack, false);
+    sb(b_stack, false);
+    printf("ss\n");
 }
 
-int rr(t_item **stack_a, t_item **stack_b)
+void  rr(t_item **a_stack, t_item **b_stack)
 {
-    int a;
-    int b;
-    
-    a = ra(stack_a);
-    b = rb(stack_b);
-    if (a && b)
-        return (1);
-    return (0);
+    ra(a_stack, false);
+    rb(b_stack, false);
+    printf("rr\n");
 }
 
-int rrr(t_item **stack_a, t_item **stack_b)
+void rrr(t_item **a_stack, t_item **b_stack)
 {
-    int a;
-    int b;
-    
-    a = rra(stack_a);
-    b = rrb(stack_b);
-    if (a && b)
-        return (1);
-    return (0);
+    rra(a_stack, false);
+    rrb(b_stack, false);
+    printf("rrr\n");
+}
+ 
+void    rotate_both(t_item **a_stack, t_item **b_stack, t_item *cheapest)
+{
+    while(*b_stack != cheapest->target && *a_stack != cheapest)
+    {
+        rr(a_stack, b_stack);
+    }
+    current_index(*a_stack);
+    current_index(*b_stack);
+}
+
+
+void	rev_rotate_both(t_item **a,
+								t_item **b,
+								t_item *cheapest_node)
+{
+	while (*b != cheapest_node->target
+		&& *a != cheapest_node)
+		rrr(a, b);
+	current_index(*a);
+	current_index(*b);
 }

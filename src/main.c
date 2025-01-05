@@ -6,29 +6,12 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 21:39:06 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/05 21:40:10 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/06 02:19:43 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-bool	is_sorted(t_item *stack)
-{
-	t_item	*tmp;
-
-	if (!stack || !stack->next)
-		return (true);
-	tmp = stack;
-	while (tmp && tmp->next)
-	{
-		if (tmp->val > tmp->next->val)
-		{
-			return (false);
-		}
-		tmp = tmp->next;
-	}
-	return (true);
-}
 
 int	main(int argc, char **argv)
 {

@@ -6,7 +6,7 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 18:23:47 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/05 21:47:49 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/06 02:34:22 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,15 +34,15 @@ typedef struct s_item
 // // Stack operations
 void				sa(t_item **stack, bool print);
 void				sb(t_item **stack, bool print);
-void				ss(t_item **stack_a, t_item **stack_b);
+void				ss(t_item **stack_a, t_item **stack_b, bool print);
 void				pa(t_item **a_stack, t_item **b_stack, bool print);
 void				pb(t_item **a_stack, t_item **b_stack, bool print);
 void				ra(t_item **stack, bool print);
 void				rb(t_item **stack, bool print);
-void				rr(t_item **stack_a, t_item **b_stack);
+void				rr(t_item **stack_a, t_item **b_stack, bool print);
 void				rra(t_item **stack, bool print);
 void				rrb(t_item **stack, bool print);
-void				rrr(t_item **stack_a, t_item **b_stack);
+void				rrr(t_item **stack_a, t_item **b_stack, bool print);
 void				rev_rotate_both(t_item **a, t_item **b,
 						t_item *cheapest_node);
 void				rotate_both(t_item **a_stack, t_item **b_stack,

@@ -6,7 +6,7 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 00:39:28 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/05 21:35:23 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/06 02:19:56 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,4 +76,22 @@ t_item	*get_cheapest(t_item *stack)
 		stack = stack->next;
 	}
 	return (NULL);
+}
+
+bool	is_sorted(t_item *stack)
+{
+	t_item	*tmp;
+
+	if (!stack || !stack->next)
+		return (true);
+	tmp = stack;
+	while (tmp && tmp->next)
+	{
+		if (tmp->val > tmp->next->val)
+		{
+			return (false);
+		}
+		tmp = tmp->next;
+	}
+	return (true);
 }

@@ -6,38 +6,40 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 18:43:02 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/05 21:40:38 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/06 02:33:31 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ss(t_item **a_stack, t_item **b_stack)
+void	ss(t_item **a_stack, t_item **b_stack, bool print)
 {
 	sa(a_stack, false);
 	sb(b_stack, false);
-	printf("ss\n");
+	if (print)
+		printf("ss\n");
 }
-
-void	rr(t_item **a_stack, t_item **b_stack)
+void	rr(t_item **a_stack, t_item **b_stack, bool print)
 {
 	ra(a_stack, false);
 	rb(b_stack, false);
-	printf("rr\n");
+	if (print)
+		printf("rr\n");
 }
 
-void	rrr(t_item **a_stack, t_item **b_stack)
+void	rrr(t_item **a_stack, t_item **b_stack, bool print)
 {
 	rra(a_stack, false);
 	rrb(b_stack, false);
-	printf("rrr\n");
+	if (print)
+		printf("rrr\n");
 }
 
 void	rotate_both(t_item **a_stack, t_item **b_stack, t_item *cheapest)
 {
 	while (*b_stack != cheapest->target && *a_stack != cheapest)
 	{
-		rr(a_stack, b_stack);
+		rr(a_stack, b_stack, true);
 	}
 	current_index(*a_stack);
 	current_index(*b_stack);
@@ -46,7 +48,7 @@ void	rotate_both(t_item **a_stack, t_item **b_stack, t_item *cheapest)
 void	rev_rotate_both(t_item **a, t_item **b, t_item *cheapest_node)
 {
 	while (*b != cheapest_node->target && *a != cheapest_node)
-		rrr(a, b);
+		rrr(a, b, true);
 	current_index(*a);
 	current_index(*b);
 }

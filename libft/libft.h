@@ -6,7 +6,7 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 10:42:42 by abdsalah          #+#    #+#             */
-/*   Updated: 2024/10/21 02:00:08 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/05 21:47:07 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int					ft_isalpha(int c);
 int					ft_isascii(int c);
 int					ft_isdigit(int c);
 int					ft_isprint(int c);
-long					ft_atol(const char *str);
+long				ft_atol(const char *str);
 char				*ft_itoa(int n);
 void				ft_putnbr_fd(int n, int fd);
 char				**ft_split(char const *s, char c);

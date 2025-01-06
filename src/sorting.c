@@ -6,11 +6,24 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 19:13:27 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/05 22:01:33 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/06 15:01:27 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+void	sort(t_item **a_stack, t_item **b_stack)
+{
+	if (!is_sorted(*a_stack))
+	{
+		if (get_size(*a_stack) == 2)
+			sa(a_stack, true);
+		else if (get_size(*a_stack) == 3)
+			sort_three(a_stack);
+		else
+			turk_sort(a_stack, b_stack);
+	}
+}
 
 void	min_on_top(t_item **a_stack)
 {
@@ -23,26 +36,6 @@ void	min_on_top(t_item **a_stack)
 	}
 }
 
-void	prep_for_push(t_item **stack, t_item *top, char stack_name)
-{
-	while (*stack != top)
-	{
-		if (stack_name == 'a')
-		{
-			if (top->above_median)
-				ra(stack, true);
-			else
-				rra(stack, true);
-		}
-		else if (stack_name == 'b')
-		{
-			if (top->above_median)
-				rb(stack, true);
-			else
-				rrb(stack, true);
-		}
-	}
-}
 
 void	move_a_to_b(t_item **a_stack, t_item **b_stack)
 {
@@ -76,7 +69,9 @@ void	sort_three(t_item **stack)
 		rra(stack, true);
 	}
 	if ((*stack)->val > (*stack)->next->val)
+	{
 		sa(stack, true);
+	}
 }
 
 void	turk_sort(t_item **a_stack, t_item **b_stack)

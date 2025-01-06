@@ -6,7 +6,7 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 18:23:47 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/06 02:34:22 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/06 14:59:21 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void				update_nodes_b(t_item *a_stack, t_item *b_stack);
 void				move_a_to_b(t_item **a_stack, t_item **b_stack);
 void				move_b_to_a(t_item **a_stack, t_item **b_stack);
 void				turk_sort(t_item **a_stack, t_item **b_stack);
-
+void				sort(t_item **a_stack, t_item **b_stack);
 // // Stack helpers
 void				pop(t_item **stack);
 void				push(t_item **dst, t_item **src);

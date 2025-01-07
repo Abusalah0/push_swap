@@ -6,7 +6,7 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 18:43:02 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/08 01:31:21 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/08 01:43:36 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ void	ss(t_item **a_stack, t_item **b_stack, bool print)
 	sa(a_stack, false);
 	sb(b_stack, false);
 	if (print)
-		printf("ss\n");
+	{
+		write(1, "ss\n", 3);
+	}
 }
 
 void	rr(t_item **a_stack, t_item **b_stack, bool print)
@@ -25,7 +27,9 @@ void	rr(t_item **a_stack, t_item **b_stack, bool print)
 	ra(a_stack, false);
 	rb(b_stack, false);
 	if (print)
-		printf("rr\n");
+	{
+		write(1, "rr\n", 3);
+	}
 }
 
 void	rrr(t_item **a_stack, t_item **b_stack, bool print)
@@ -33,7 +37,9 @@ void	rrr(t_item **a_stack, t_item **b_stack, bool print)
 	rra(a_stack, false);
 	rrb(b_stack, false);
 	if (print)
-		printf("rrr\n");
+	{
+		write(1, "rrr\n", 4);
+	}
 }
 
 void	rotate(t_item **a_stack, t_item **b_stack, t_item *cheapest)

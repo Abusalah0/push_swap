@@ -6,7 +6,7 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 14:38:52 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/07 17:37:59 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/08 01:44:57 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	exec_and_check_ops(t_item **a_stack, t_item **b_stack)
 			free(command);
 			free_stack(*a_stack);
 			free_stack(*b_stack);
-			error_exit("Error\n");
+			error_exit();
 		}
 		free(command);
 		command = get_next_line(0);

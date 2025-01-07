@@ -6,7 +6,7 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 21:38:02 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/07 20:49:04 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/08 01:45:14 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,13 +47,13 @@ static void	parse_string_numbers(char **input, int *numbers, int size)
 		if (!is_valid_input(input[i + 1]))
 		{
 			free(numbers);
-			error_exit("ERROR\n");
+			error_exit();
 		}
 		num = ft_atol(input[i + 1]);
 		if (num > INT_MAX || num < INT_MIN)
 		{
 			free(numbers);
-			error_exit("ERROR\n");
+			error_exit();
 		}
 		numbers[i] = num;
 		i++;
@@ -74,19 +74,19 @@ int	*check_input(int argc, char **argv)
 
 	if (argc < 2)
 	{
-		error_exit("ERROR\n");
+		error_exit();
 	}
 	size = argc - 1;
 	numbers = malloc(size * sizeof(int));
 	if (!numbers)
 	{
-		error_exit("ERROR\n");
+		error_exit();
 	}
 	parse_string_numbers(argv, numbers, size);
 	if (check_for_dups(numbers, size))
 	{
 		free(numbers);
-		error_exit("ERROR\n");
+		error_exit();
 	}
 	return (numbers);
 }

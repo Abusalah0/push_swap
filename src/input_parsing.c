@@ -6,7 +6,7 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 21:38:02 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/07 14:35:49 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/07 17:32:10 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,13 +84,13 @@ static void	parse_string_numbers(char **input, int *numbers, int size)
 		if (!is_valid_input(input[i + 1]))
 		{
 			free(numbers);
-			error_exit("ERROR\n", 0, 0);
+			error_exit("ERROR\n");
 		}
 		num = ft_atol(input[i + 1]);
 		if (num > INT_MAX || num < INT_MIN)
 		{
 			free(numbers);
-			error_exit("ERROR\n", 0, 0);
+			error_exit("ERROR\n");
 		}
 		numbers[i] = num;
 		i++;
@@ -103,16 +103,20 @@ int	*check_input(int argc, char **argv)
 	int	size;
 
 	if (argc < 2)
-		error_exit("Error\n", NULL, 0);
+	{
+		error_exit("ERROR\n");
+	}
 	size = argc - 1;
 	numbers = malloc(size * sizeof(int));
 	if (!numbers)
-		error_exit("Error\n", NULL, 0);
+	{
+		error_exit("ERROR\n");
+	}
 	parse_string_numbers(argv, numbers, size);
 	if (check_for_dups(numbers, size))
 	{
 		free(numbers);
-		error_exit("Error\n", NULL, 0);
+		error_exit("ERROR\n");		
 	}
 	return (numbers);
 }

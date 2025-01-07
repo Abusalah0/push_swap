@@ -6,25 +6,14 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 15:56:57 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/07 14:45:25 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/07 17:31:16 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	error_exit(char *str, void **allocated_mem, int count)
+void	error_exit(char *str)
 {
-	int	i;
-
-	i = 0;
-	while (i < count)
-	{
-		if (allocated_mem[i])
-			free(allocated_mem[i]);
-		i++;
-	}
-	if (allocated_mem)
-		free(allocated_mem);
 	printf("%s\n", str);
 	exit(EXIT_FAILURE);
 }

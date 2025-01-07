@@ -6,7 +6,7 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 18:23:47 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/08 01:30:47 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/08 01:34:05 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,8 @@ t_item				*get_cheapest(t_item *stack);
 
 // Parallel operations
 void				min_on_top(t_item **a_stack);
-void				set_cheapest_on_top(t_item **stack, t_item *top, char stack_name);
+void				set_cheapest_on_top_a(t_item **stack, t_item *top);
+void				set_cheapest_on_top_b(t_item **stack, t_item *top);
 
 // // Node operations
 void				update_node_index(t_item *stack);

@@ -6,7 +6,7 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 21:20:37 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/08 01:30:04 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/08 01:37:46 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,25 +53,32 @@ void	update_node_index(t_item *stack)
 	}
 }
 
-void	set_cheapest_on_top(t_item **stack, t_item *top, char stack_name)
+void	set_cheapest_on_top_a(t_item **stack, t_item *top)
 {
 	while (*stack != top)
 	{
-		if (stack_name == 'a')
+		if (top->above_median)
 		{
-			if (top->above_median)
-				ra(stack, true);
-			else
-			{
-				rra(stack, true);
-			}
+			ra(stack, true);
 		}
-		else if (stack_name == 'b')
+		else
 		{
-			if (top->above_median)
-				rb(stack, true);
-			else
-				rrb(stack, true);
+			rra(stack, true);
+		}
+	}
+}
+
+void	set_cheapest_on_top_b(t_item **stack, t_item *top)
+{
+	while (*stack != top)
+	{
+		if (top->above_median)
+		{
+			rb(stack, true);
+		}
+		else
+		{
+			rrb(stack, true);
 		}
 	}
 }

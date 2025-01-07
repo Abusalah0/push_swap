@@ -6,7 +6,7 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 21:38:02 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/07 20:38:24 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/07 20:40:49 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,10 +62,11 @@ static void	parse_string_numbers(char **input, int *numbers, int size)
 /*
 ** check_for_input:
 **----------------
-** Check if there are any duplicates/none numeric/out of range values in the input
+** Check for any duplicates/none numeric/out of range values in the input
 ** using a hashset to store the values and check for duplicates.
 ** return an array of integers if the input is valid.
 */
+
 int	*check_input(int argc, char **argv)
 {
 	int	*numbers;

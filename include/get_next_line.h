@@ -6,7 +6,7 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 10:36:39 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/06 02:23:50 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/07 14:39:44 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,5 @@
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 1024
 # endif
-
 
 #endif

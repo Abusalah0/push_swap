@@ -6,13 +6,13 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 23:48:33 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/06 02:24:21 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/07 14:40:40 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strncpy(char *dst, const char *src, size_t sz)
+char	*ft_strncpy(char *dst, const char *src, size_t sz)
 {
-    return (ft_memcpy(dst, src, sz));
+	return (ft_memcpy(dst, src, sz));
 }

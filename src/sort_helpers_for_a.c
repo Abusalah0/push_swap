@@ -6,7 +6,7 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 21:17:32 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/05 22:01:23 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/07 14:32:33 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	set_target_node_a(t_item *a_stack, t_item *b_stack)
 		curser = b_stack;
 		while (curser)
 		{
-			if (curser->val > a_stack->val && curser->val > closest_match)
+			if (curser->val < a_stack->val && curser->val > closest_match)
 			{
 				closest_match = curser->val;
 				target = curser;

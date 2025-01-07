@@ -6,7 +6,7 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 21:17:32 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/07 14:36:10 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/07 22:21:41 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,11 @@ void	set_target_node_a(t_item *a_stack, t_item *b_stack)
 {
 	t_item	*curser;
 	t_item	*target;
-	int		closest_match;
+	long	closest_match;
 
 	while (a_stack)
 	{
-		closest_match = INT_MIN;
+		closest_match = LONG_MIN;
 		curser = b_stack;
 		while (curser)
 		{
@@ -51,7 +51,7 @@ void	set_target_node_a(t_item *a_stack, t_item *b_stack)
 			}
 			curser = curser->next;
 		}
-		if (closest_match == INT_MIN)
+		if (closest_match == LONG_MIN)
 			a_stack->target = get_max(b_stack);
 		else
 			a_stack->target = target;

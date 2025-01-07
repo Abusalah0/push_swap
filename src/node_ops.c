@@ -6,7 +6,7 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 21:20:37 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/08 01:25:03 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/08 01:30:04 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	set_cheapest(t_item *stack)
 	cheapest->cheapest = true;
 }
 
-void	current_index(t_item *stack)
+void	update_node_index(t_item *stack)
 {
 	int	index;
 	int	median;
@@ -53,7 +53,7 @@ void	current_index(t_item *stack)
 	}
 }
 
-void	prep_for_push(t_item **stack, t_item *top, char stack_name)
+void	set_cheapest_on_top(t_item **stack, t_item *top, char stack_name)
 {
 	while (*stack != top)
 	{

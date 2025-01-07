@@ -6,7 +6,7 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 19:32:18 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/07 22:22:03 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/08 01:32:23 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 void	move_b_to_a(t_item **a_stack, t_item **b_stack)
 {
-	prep_for_push(a_stack, (*b_stack)->target, 'a');
+	set_cheapest_on_top(a_stack, (*b_stack)->target, 'a');
 	pa(a_stack, b_stack, true);
 }
 
 void	update_nodes_b(t_item *a_stack, t_item *b_stack)
 {
-	current_index(b_stack);
-	current_index(a_stack);
+	update_node_index(b_stack);
+	update_node_index(a_stack);
 	set_target_b(a_stack, b_stack);
 }
 

@@ -6,7 +6,7 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 18:43:02 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/07 17:35:37 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/08 01:31:21 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,14 +42,14 @@ void	rotate(t_item **a_stack, t_item **b_stack, t_item *cheapest)
 	{
 		rr(a_stack, b_stack, true);
 	}
-	current_index(*a_stack);
-	current_index(*b_stack);
+	update_node_index(*a_stack);
+	update_node_index(*b_stack);
 }
 
 void	rrotate(t_item **a, t_item **b, t_item *cheapest_node)
 {
 	while (*b != cheapest_node->target && *a != cheapest_node)
 		rrr(a, b, true);
-	current_index(*a);
-	current_index(*b);
+	update_node_index(*a);
+	update_node_index(*b);
 }

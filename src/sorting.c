@@ -6,7 +6,7 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 19:13:27 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/08 00:59:13 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/08 01:31:57 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,8 @@ void	move_a_to_b(t_item **a_stack, t_item **b_stack)
 	{
 		rrotate(a_stack, b_stack, cheapest);
 	}
-	prep_for_push(a_stack, cheapest, 'a');
-	prep_for_push(b_stack, cheapest->target, 'b');
+	set_cheapest_on_top(a_stack, cheapest, 'a');
+	set_cheapest_on_top(b_stack, cheapest->target, 'b');
 	pb(a_stack, b_stack, true);
 }
 
@@ -93,6 +93,6 @@ void	turk_sort(t_item **a_stack, t_item **b_stack)
 		update_nodes_b(*a_stack, *b_stack);
 		move_b_to_a(a_stack, b_stack);
 	}
-	current_index(*a_stack);
+	update_node_index(*a_stack);
 	min_on_top(a_stack);
 }

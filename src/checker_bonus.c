@@ -1,4 +1,4 @@
-#include "../push_swap.h"
+#include "../include/push_swap.h"
 
 bool execute_op(char *op, t_item **a_stack, t_item **b_stack)
 {

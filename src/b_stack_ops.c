@@ -6,11 +6,11 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 21:12:31 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/05 21:37:36 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/07 14:35:38 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../include/push_swap.h"
 
 void	sb(t_item **stack, bool print)
 {

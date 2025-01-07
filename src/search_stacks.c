@@ -6,11 +6,11 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 00:39:28 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/06 02:19:56 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/07 14:36:08 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../include/push_swap.h"
 
 t_item	*get_max(t_item *stack)
 {

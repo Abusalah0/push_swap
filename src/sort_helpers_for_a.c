@@ -6,11 +6,11 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 21:17:32 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/07 14:32:33 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/07 14:36:10 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../include/push_swap.h"
 
 void	cost_analysis_a(t_item *a_stack, t_item *b_stack)
 {

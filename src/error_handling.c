@@ -6,11 +6,11 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 15:56:57 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/05 21:14:53 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/07 14:35:45 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../include/push_swap.h"
 
 void	error_exit(char *str, void **allocated_mem, int count)
 {

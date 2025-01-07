@@ -6,13 +6,11 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 21:39:06 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/06 14:58:41 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/07 14:35:57 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
-#include <stdio.h>
-
+#include "../include/push_swap.h"
 
 int	main(int argc, char **argv)
 {

@@ -6,11 +6,11 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 18:19:39 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/05 21:45:45 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/07 14:36:22 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../include/push_swap.h"
 
 void	push(t_item **dst, t_item **src)
 {

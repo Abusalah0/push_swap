@@ -6,11 +6,11 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 19:32:18 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/05 21:41:07 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/07 14:36:13 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../include/push_swap.h"
 
 void	move_b_to_a(t_item **a_stack, t_item **b_stack)
 {

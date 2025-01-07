@@ -6,11 +6,11 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 21:20:37 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/06 15:01:19 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/07 14:36:01 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../include/push_swap.h"
 
 void	set_cheapest(t_item *stack)
 {

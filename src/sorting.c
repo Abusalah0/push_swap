@@ -6,7 +6,7 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 19:13:27 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/07 14:39:16 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/07 18:46:42 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,11 @@ void	move_a_to_b(t_item **a_stack, t_item **b_stack)
 	cheapest = get_cheapest(*a_stack);
 	if (cheapest->above_median && cheapest->target->above_median)
 	{
-		rotate_both(a_stack, b_stack, cheapest);
+		rotate(a_stack, b_stack, cheapest);
 	}
 	else if (!cheapest->above_median && !cheapest->target->above_median)
 	{
-		rev_rotate_both(a_stack, b_stack, cheapest);
+		rrotate(a_stack, b_stack, cheapest);
 	}
 	prep_for_push(a_stack, cheapest, 'a');
 	prep_for_push(b_stack, cheapest->target, 'b');

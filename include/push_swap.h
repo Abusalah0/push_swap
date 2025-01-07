@@ -6,7 +6,7 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 18:23:47 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/08 01:34:05 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/08 01:44:34 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ void				cost_analysis(t_item *a_stack, t_item *b_stack);
 void				set_cheapest(t_item *stack);
 
 // Error handling
-void				error_exit(char *str);
+void				error_exit(void);
 void				free_split(char **split);
 void				free_stack(t_item *stack);
 

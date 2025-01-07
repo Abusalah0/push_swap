@@ -6,7 +6,7 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 18:19:39 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/07 17:36:45 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/08 01:45:32 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	fill_stack(t_item **stack, int *numbers, int size)
 		{
 			free_stack(*stack);
 			free(numbers);
-			error_exit("ERROR\n");
+			error_exit();
 		}
 		push(stack, &new_node);
 		i--;

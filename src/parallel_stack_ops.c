@@ -6,7 +6,7 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 18:43:02 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/07 14:39:31 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/07 17:35:37 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	rrr(t_item **a_stack, t_item **b_stack, bool print)
 		printf("rrr\n");
 }
 
-void	rotate_both(t_item **a_stack, t_item **b_stack, t_item *cheapest)
+void	rotate(t_item **a_stack, t_item **b_stack, t_item *cheapest)
 {
 	while (*b_stack != cheapest->target && *a_stack != cheapest)
 	{
@@ -46,7 +46,7 @@ void	rotate_both(t_item **a_stack, t_item **b_stack, t_item *cheapest)
 	current_index(*b_stack);
 }
 
-void	rev_rotate_both(t_item **a, t_item **b, t_item *cheapest_node)
+void	rrotate(t_item **a, t_item **b, t_item *cheapest_node)
 {
 	while (*b != cheapest_node->target && *a != cheapest_node)
 		rrr(a, b, true);

@@ -6,7 +6,7 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 18:23:47 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/07 14:35:30 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/07 17:36:02 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,9 @@ void				rr(t_item **stack_a, t_item **b_stack, bool print);
 void				rra(t_item **stack, bool print);
 void				rrb(t_item **stack, bool print);
 void				rrr(t_item **stack_a, t_item **b_stack, bool print);
-void				rev_rotate_both(t_item **a, t_item **b,
+void				rrotate(t_item **a, t_item **b,
 						t_item *cheapest_node);
-void				rotate_both(t_item **a_stack, t_item **b_stack,
+void				rotate(t_item **a_stack, t_item **b_stack,
 						t_item *cheapest);
 
 // // Sorting operations
@@ -83,7 +83,7 @@ void				cost_analysis(t_item *a_stack, t_item *b_stack);
 void				set_cheapest(t_item *stack);
 
 // Error handling
-void				error_exit(char *str, void **allocated_mem, int count);
+void				error_exit(char *str);
 void				free_split(char **split);
 void				free_stack(t_item *stack);
 

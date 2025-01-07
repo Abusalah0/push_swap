@@ -6,11 +6,13 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 19:18:26 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/07 19:40:04 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/07 20:34:30 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
+#define EMPTY_SLOT LONG_MIN
 
 static unsigned int	hash(int key, unsigned int size)
 {
@@ -19,12 +21,12 @@ static unsigned int	hash(int key, unsigned int size)
 	return (key % size);
 }
 
-static int	insert(int *hashset, unsigned int size, int value)
+static bool	insert(long *hashset, unsigned int size, int value)
 {
 	unsigned int	index;
 
 	index = hash(value, size);
-	while (hashset[index] != 0)
+	while (hashset[index] != EMPTY_SLOT)
 	{
 		if (hashset[index] == value)
 		{
@@ -38,22 +40,26 @@ static int	insert(int *hashset, unsigned int size, int value)
 
 bool	check_for_dups(int *nums, int nums_size)
 {
-	int				i;
-	unsigned int	setsize;
-	int				*hashset;
+	int		setsize;
+	long	*hashset;
+	int		i;
 
 	i = -1;
 	setsize = nums_size * 2 + 1;
-	hashset = ft_calloc(setsize, sizeof(int));
+	hashset = malloc(setsize * sizeof(long));
 	if (!hashset)
 		return (true);
-	while (++i < nums_size)
+	while (++i < setsize)
+		hashset[i] = EMPTY_SLOT;
+	i = 0;
+	while (i < nums_size)
 	{
 		if (insert(hashset, setsize, nums[i]))
 		{
 			free(hashset);
 			return (true);
 		}
+		i++;
 	}
 	free(hashset);
 	return (false);

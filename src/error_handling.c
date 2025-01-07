@@ -6,7 +6,7 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 15:56:57 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/07 14:35:45 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/07 14:45:25 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,7 @@ void	free_stack(t_item *stack)
 {
 	t_item	*cursor;
 
-	if (!stack)
-		return ;
-	cursor = stack;
-	while (cursor)
+	while (stack)
 	{
 		cursor = stack;
 		stack = stack->next;

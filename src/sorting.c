@@ -6,7 +6,7 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 19:13:27 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/07 14:36:17 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/07 14:39:16 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ void	min_on_top(t_item **a_stack)
 			rra(a_stack, true);
 	}
 }
-
 
 void	move_a_to_b(t_item **a_stack, t_item **b_stack)
 {

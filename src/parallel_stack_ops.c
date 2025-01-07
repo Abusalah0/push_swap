@@ -6,7 +6,7 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 18:43:02 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/07 14:36:05 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/07 14:39:31 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	ss(t_item **a_stack, t_item **b_stack, bool print)
 	if (print)
 		printf("ss\n");
 }
+
 void	rr(t_item **a_stack, t_item **b_stack, bool print)
 {
 	ra(a_stack, false);

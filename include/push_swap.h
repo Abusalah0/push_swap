@@ -6,7 +6,7 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 18:23:47 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/07 20:39:41 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/08 01:24:48 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 # include <stdbool.h>
 # include <stdio.h>
 # include <stdlib.h>
+
+# define EMPTY_SLOT LONG_MIN
 
 typedef struct s_item
 {

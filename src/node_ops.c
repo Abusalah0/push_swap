@@ -6,7 +6,7 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 21:20:37 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/08 01:07:03 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/08 01:25:03 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ void	current_index(t_item *stack)
 		index++;
 	}
 }
+
 void	prep_for_push(t_item **stack, t_item *top, char stack_name)
 {
 	while (*stack != top)

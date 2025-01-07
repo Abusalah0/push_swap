@@ -6,13 +6,11 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 19:18:26 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/07 20:34:30 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/08 01:24:52 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-
-#define EMPTY_SLOT LONG_MIN
 
 static unsigned int	hash(int key, unsigned int size)
 {

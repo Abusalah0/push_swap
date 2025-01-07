@@ -6,7 +6,7 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 21:20:37 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/07 14:39:24 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/08 01:07:03 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,18 +37,21 @@ void	current_index(t_item *stack)
 	int	index;
 	int	median;
 
+	index = 0;
 	if (!stack)
 		return ;
-	index = 0;
 	median = get_size(stack) / 2;
 	while (stack)
 	{
-		stack->index = index++;
-		stack->above_median = stack->index < median;
+		stack->index = index;
+		if (index <= median)
+			stack->above_median = true;
+		else
+			stack->above_median = false;
 		stack = stack->next;
+		index++;
 	}
 }
-
 void	prep_for_push(t_item **stack, t_item *top, char stack_name)
 {
 	while (*stack != top)
@@ -58,7 +61,9 @@ void	prep_for_push(t_item **stack, t_item *top, char stack_name)
 			if (top->above_median)
 				ra(stack, true);
 			else
+			{
 				rra(stack, true);
+			}
 		}
 		else if (stack_name == 'b')
 		{

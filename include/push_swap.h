@@ -6,7 +6,7 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 18:23:47 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/07 17:36:02 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/07 19:19:19 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,4 +90,5 @@ void				free_stack(t_item *stack);
 // Input parsing
 int					*check_input(int argc, char **argv);
 bool				is_sorted(t_item *stack);
+bool				check_for_dups(int *nums, int nums_size);
 #endif

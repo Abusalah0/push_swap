@@ -12,6 +12,7 @@ SRC = main.c\
 	a_stack_ops.c \
 	b_stack_ops.c \
 	search_stacks.c \
+	hashset.c \
 
 SRCS = $(addprefix src/, $(SRC))
 OBJSDIR = obj

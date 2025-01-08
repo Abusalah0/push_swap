@@ -6,12 +6,18 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 19:13:27 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/08 06:06:42 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/08 14:39:55 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
+/*
+** 		sort()
+** -----------------------
+** Sorts the stack using the turk_sort algorithm.
+** or the sort_three algorithm if the stack size is 3.
+*/
 void	sort(t_item **a_stack, t_item **b_stack)
 {
 	if (!is_sorted(*a_stack))
@@ -24,7 +30,11 @@ void	sort(t_item **a_stack, t_item **b_stack)
 			turk_sort(a_stack, b_stack);
 	}
 }
-
+/*
+** 		move_min_to_top()
+** -----------------------
+** make sure the min is on top after sorting
+*/
 void	move_min_to_top(t_item **a_stack)
 {
 	while ((*a_stack)->val != get_min(*a_stack)->val)
@@ -54,6 +64,11 @@ void	move_a_to_b(t_item **a_stack, t_item **b_stack)
 	pb(a_stack, b_stack, true);
 }
 
+/*
+** sort_three()
+** -----------------------
+** Sorts a stack of size 3.
+*/
 void	sort_three(t_item **stack)
 {
 	t_item	*max;
@@ -72,7 +87,12 @@ void	sort_three(t_item **stack)
 		sa(stack, true);
 	}
 }
-
+/*
+** turk_sort()
+** -----------------------
+** Sorts a stack of size 4 or more.
+** where the magic happens
+*/
 void	turk_sort(t_item **a_stack, t_item **b_stack)
 {
 	int	size;

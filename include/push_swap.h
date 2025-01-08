@@ -6,7 +6,7 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 18:23:47 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/08 01:44:34 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/08 06:07:05 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,6 @@ void				sort(t_item **a_stack, t_item **b_stack);
 // // Stack helpers
 void				pop(t_item **stack);
 void				push(t_item **dst, t_item **src);
-void				print_stack(t_item *stack);
 t_item				*setup_node(int *values, bool, bool cheapest,
 						t_item *target);
 void				fill_stack(t_item **stack, int *numbers, int size);
@@ -74,20 +73,18 @@ int					get_size(t_item *stack);
 t_item				*get_cheapest(t_item *stack);
 
 // Parallel operations
-void				min_on_top(t_item **a_stack);
+void				move_min_to_top(t_item **a_stack);
 void				set_cheapest_on_top_a(t_item **stack, t_item *top);
 void				set_cheapest_on_top_b(t_item **stack, t_item *top);
 
 // // Node operations
 void				update_node_index(t_item *stack);
 void				set_target_node_a(t_item *a_stack, t_item *b_stack);
-void				set_target_b(t_item *a_stack, t_item *b_stack);
-void				cost_analysis(t_item *a_stack, t_item *b_stack);
+void				set_target_node_b(t_item *a_stack, t_item *b_stack);
 void				set_cheapest(t_item *stack);
 
 // Error handling
 void				error_exit(void);
-void				free_split(char **split);
 void				free_stack(t_item *stack);
 
 // Input parsing

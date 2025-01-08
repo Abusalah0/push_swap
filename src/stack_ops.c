@@ -6,7 +6,7 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 18:19:39 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/08 03:07:21 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/08 06:01:54 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,21 +54,6 @@ void	fill_stack(t_item **stack, int *numbers, int size)
 		i--;
 	}
 }
-
-// void	print_stack(t_item *stack)
-// {
-// 	if (!stack)
-// 	{
-// 		printf("Stack is empty.\n");
-// 		return ;
-// 	}
-// 	while (stack)
-// 	{
-// 		printf("Index: %d | Value: %d\n", stack->index, stack->val);
-// 		stack = stack->next;
-// 	}
-// 	printf("End of stack.\n");
-// }
 
 t_item	*setup_node(int *values, bool above_median,
 		bool cheapest, t_item *target)

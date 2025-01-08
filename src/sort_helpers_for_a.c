@@ -6,13 +6,13 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 21:17:32 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/08 01:31:34 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/08 06:05:19 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	cost_analysis_a(t_item *a_stack, t_item *b_stack)
+void	set_cost(t_item *a_stack, t_item *b_stack)
 {
 	int	a_size;
 	int	b_size;
@@ -64,6 +64,6 @@ void	update_nodes_a(t_item *a_stack, t_item *b_stack)
 	update_node_index(a_stack);
 	update_node_index(b_stack);
 	set_target_node_a(a_stack, b_stack);
-	cost_analysis_a(a_stack, b_stack);
+	set_cost(a_stack, b_stack);
 	set_cheapest(a_stack);
 }

@@ -6,7 +6,7 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 15:56:57 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/08 01:44:01 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/08 03:13:03 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	error_exit(void)
 {
-	write(2, "Error\n", 6);
+	ft_putstr_fd("Error\n", 2);
 	exit(EXIT_FAILURE);
 }
 

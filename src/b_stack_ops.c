@@ -6,7 +6,7 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 21:12:31 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/08 01:42:41 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/08 03:10:59 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	sb(t_item **stack, bool print)
 	(*stack)->prev = NULL;
 	if (print)
 	{
-		write(1, "sb\n", 3);
+		ft_putstr_fd("sb\n", 1);
 	}
 }
 
@@ -35,7 +35,7 @@ void	pb(t_item **a_stack, t_item **b_stack, bool print)
 	push(b_stack, a_stack);
 	if (print)
 	{
-		write(1, "pb\n", 3);
+		ft_putstr_fd("pb\n", 1);
 	}
 }
 
@@ -57,7 +57,7 @@ void	rb(t_item **stack, bool print)
 	(*stack)->prev = NULL;
 	if (print)
 	{
-		write(1, "rb\n", 3);
+		ft_putstr_fd("rb\n", 1);
 	}
 }
 
@@ -78,6 +78,6 @@ void	rrb(t_item **stack, bool print)
 	tmp->prev = NULL;
 	if (print)
 	{
-		write(1, "rrb\n", 4);
+		ft_putstr_fd("rrb\n", 1);
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 14:38:52 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/08 01:44:57 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/08 03:12:39 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,9 +63,9 @@ void	exec_and_check_ops(t_item **a_stack, t_item **b_stack)
 void	final_check(t_item *a_stack, t_item *b_stack)
 {
 	if (is_sorted(a_stack) && b_stack == NULL)
-		write(1, "OK\n", 3);
+		ft_putstr_fd("OK\n", 1);
 	else
-		write(1, "KO\n", 3);
+		ft_putchar_fd("KO\n", 1);
 }
 
 int	main(int argc, char **argv)
@@ -77,10 +77,16 @@ int	main(int argc, char **argv)
 	a_stack = NULL;
 	b_stack = NULL;
 	if (argc < 2)
-		return (write(2, "Error\n", 6), 1);
+	{
+		ft_putstr_fd("Error\n", 2);
+		return (1);
+	}
 	num = check_input(argc, argv);
 	if (!num)
-		return (write(2, "Error\n", 6), 1);
+	{
+		ft_putstr_fd("Error\n", 2);
+		return (1);
+	}
 	fill_stack(&a_stack, num, argc - 1);
 	free(num);
 	exec_and_check_ops(&a_stack, &b_stack);

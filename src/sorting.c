@@ -6,7 +6,7 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 19:13:27 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/08 01:34:24 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/08 06:06:42 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	sort(t_item **a_stack, t_item **b_stack)
 	}
 }
 
-void	min_on_top(t_item **a_stack)
+void	move_min_to_top(t_item **a_stack)
 {
 	while ((*a_stack)->val != get_min(*a_stack)->val)
 	{
@@ -94,5 +94,5 @@ void	turk_sort(t_item **a_stack, t_item **b_stack)
 		move_b_to_a(a_stack, b_stack);
 	}
 	update_node_index(*a_stack);
-	min_on_top(a_stack);
+	move_min_to_top(a_stack);
 }

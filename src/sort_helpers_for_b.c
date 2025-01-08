@@ -6,7 +6,7 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 19:32:18 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/08 01:34:35 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/08 06:07:32 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ void	update_nodes_b(t_item *a_stack, t_item *b_stack)
 {
 	update_node_index(b_stack);
 	update_node_index(a_stack);
-	set_target_b(a_stack, b_stack);
+	set_target_node_b(a_stack, b_stack);
 }
 
-void	set_target_b(t_item *a_stack, t_item *b_stack)
+void	set_target_node_b(t_item *a_stack, t_item *b_stack)
 {
 	t_item	*curser;
 	t_item	*target;

@@ -6,7 +6,7 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 21:38:02 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/09 03:19:26 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/10 00:13:40 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ static int	is_valid_input(char *str)
 
 	i = 0;
 	if (str[i] == '+' || str[i] == '-')
-		str++;
-	while (*str == '0')
 		str++;
 	if (ft_strlen(str) > 10)
 	{

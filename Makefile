@@ -28,7 +28,8 @@ BONUS_SRC = checker_bonus.c \
 			sort_helpers_for_b.c \
 			a_stack_ops.c \
 			b_stack_ops.c \
-			search_stacks.c
+			search_stacks.c \
+			hashset.c \
 			
 BONUS_SRCS = $(addprefix src/, $(BONUS_SRC))
 BONUS_OBJS = $(addprefix $(OBJSDIR)/, $(notdir $(BONUS_SRCS:.c=.o)))

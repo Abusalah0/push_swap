@@ -6,7 +6,7 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 21:17:32 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/09 03:54:06 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/09 04:02:49 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 **--------------------------
 ** Set the push cost for each node in stack A
 */
-static void cost_helper(t_item *a_stack, int a_size, int b_size)
+static void	cost_helper(t_item *a_stack, int a_size, int b_size)
 {
 	if (a_stack->above_median)
 	{

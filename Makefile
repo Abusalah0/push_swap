@@ -80,7 +80,7 @@ clean_bonus: lib_clean
 fclean: clean lib_fclean
 	rm -rf $(NAME)
 
-fclean_bonus: clean lib_fclean
+fclean_bonus: clean lib_fclean clean_bonus
 	rm -rf $(BONUS_NAME)
 re: fclean all
 

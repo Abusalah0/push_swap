@@ -6,7 +6,7 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 21:17:32 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/09 04:10:41 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/09 04:11:55 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,10 +68,10 @@ static void	target_helper(t_item *curser, t_item *a_stack, t_item **target,
 {
 	if (curser->val < a_stack->val)
 	{
-		if (LONG_MAX == closest_match || curser->val > closest_match)
+		if (LONG_MAX == *closest_match || curser->val > *closest_match)
 		{
-			closest_match = curser->val;
-			target = curser;
+			*closest_match = curser->val;
+			*target = curser;
 		}
 	}
 }

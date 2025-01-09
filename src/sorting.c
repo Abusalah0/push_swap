@@ -6,7 +6,7 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 19:13:27 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/08 14:39:55 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/09 04:05:23 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 ** Sorts the stack using the turk_sort algorithm.
 ** or the sort_three algorithm if the stack size is 3.
 */
+
 void	sort(t_item **a_stack, t_item **b_stack)
 {
 	if (!is_sorted(*a_stack))
@@ -35,6 +36,7 @@ void	sort(t_item **a_stack, t_item **b_stack)
 ** -----------------------
 ** make sure the min is on top after sorting
 */
+
 void	move_min_to_top(t_item **a_stack)
 {
 	while ((*a_stack)->val != get_min(*a_stack)->val)
@@ -93,6 +95,7 @@ void	sort_three(t_item **stack)
 ** Sorts a stack of size 4 or more.
 ** where the magic happens
 */
+
 void	turk_sort(t_item **a_stack, t_item **b_stack)
 {
 	int	size;

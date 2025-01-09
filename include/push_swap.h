@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yaman-alrifai <yaman-alrifai@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 18:23:47 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/08 06:07:05 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/08 19:28:55 by yaman-alrif      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,7 @@ void				rr(t_item **stack_a, t_item **b_stack, bool print);
 void				rra(t_item **stack, bool print);
 void				rrb(t_item **stack, bool print);
 void				rrr(t_item **stack_a, t_item **b_stack, bool print);
-void				rrotate(t_item **a, t_item **b,
-						t_item *cheapest_node);
+void				rrotate(t_item **a, t_item **b, t_item *cheapest_node);
 void				rotate(t_item **a_stack, t_item **b_stack,
 						t_item *cheapest);
 
@@ -82,6 +81,7 @@ void				update_node_index(t_item *stack);
 void				set_target_node_a(t_item *a_stack, t_item *b_stack);
 void				set_target_node_b(t_item *a_stack, t_item *b_stack);
 void				set_cheapest(t_item *stack);
+void				set_cost(t_item *a_stack, t_item *b_stack);
 
 // Error handling
 void				error_exit(void);

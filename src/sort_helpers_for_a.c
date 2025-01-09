@@ -6,7 +6,7 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 21:17:32 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/09 04:02:49 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/09 04:10:41 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,19 @@ void	set_cost(t_item *a_stack, t_item *b_stack)
 	}
 }
 
+static void	target_helper(t_item *curser, t_item *a_stack, t_item **target,
+		long *closest_match)
+{
+	if (curser->val < a_stack->val)
+	{
+		if (LONG_MAX == closest_match || curser->val > closest_match)
+		{
+			closest_match = curser->val;
+			target = curser;
+		}
+	}
+}
+
 void	set_target_node_a(t_item *a_stack, t_item *b_stack)
 {
 	t_item	*curser;
@@ -75,14 +88,7 @@ void	set_target_node_a(t_item *a_stack, t_item *b_stack)
 		curser = b_stack;
 		while (curser)
 		{
-			if (curser->val < a_stack->val)
-			{
-				if (LONG_MAX == closest_match || curser->val > closest_match)
-				{
-					closest_match = curser->val;
-					target = curser;
-				}
-			}
+			target_helper(curser, a_stack, &target, &closest_match);
 			curser = curser->next;
 		}
 		if (closest_match == LONG_MAX)

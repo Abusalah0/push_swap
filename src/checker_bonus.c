@@ -6,7 +6,7 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 14:38:52 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/09 04:16:33 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/10 00:05:18 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,10 +77,7 @@ int	main(int argc, char **argv)
 	a_stack = NULL;
 	b_stack = NULL;
 	if (argc < 2)
-	{
-		ft_putstr_fd("Error\n", 2);
 		return (1);
-	}
 	num = check_input(argc, argv);
 	if (!num)
 	{

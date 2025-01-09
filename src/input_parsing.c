@@ -6,7 +6,7 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 21:38:02 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/08 01:45:14 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/09 03:19:26 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int	is_valid_input(char *str)
 	}
 	if (!ft_isdigit(str[i]))
 		return (0);
-	while (str[i] && str[i] != ' ')
+	while (str[i])
 	{
 		if (!ft_isdigit(str[i]))
 			return (0);

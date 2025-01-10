@@ -53,7 +53,9 @@ $(OBJSDIR)/%.o: src/%.c | $(OBJSDIR)
 $(OBJSDIR):
 	mkdir -p $(OBJSDIR)
 
-bonus: $(BONUS_OBJS) $(LIB)
+bonus: $(LIB) $(BONUS_NAME)
+
+$(BONUS_NAME): $(BONUS_OBJS)
 	$(CC) $(CFLAGS) -o $(BONUS_NAME) $(BONUS_OBJS) $(LIB_FLAGS)
 
 $(BONUS_OBJSDIR)/%.o: src/%.c | $(BONUS_OBJSDIR)

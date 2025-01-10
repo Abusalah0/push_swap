@@ -70,7 +70,7 @@ $(LIB):
 lib_clean:
 	make -C $(LIB_DIR) clean
 
-lib_fclean:
+lib_fclean: lib_clean
 	make -C $(LIB_DIR) fclean
 
 clean: lib_clean
@@ -82,8 +82,9 @@ clean_bonus: lib_clean
 fclean: clean lib_fclean
 	rm -rf $(NAME)
 
-fclean_bonus: clean lib_fclean clean_bonus
+fclean_bonus: lib_fclean clean_bonus
 	rm -rf $(BONUS_NAME)
+
 re: fclean all
 
 re_bonus: fclean_bonus bonus

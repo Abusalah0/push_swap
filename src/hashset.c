@@ -6,7 +6,7 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 19:18:26 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/08 01:24:52 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/11 13:29:10 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static bool	insert(long *hashset, unsigned int size, int value)
 	return (false);
 }
 
-bool	check_for_dups(int *nums, int nums_size)
+bool	ft_check_for_dups(int *nums, int nums_size)
 {
 	int		setsize;
 	long	*hashset;

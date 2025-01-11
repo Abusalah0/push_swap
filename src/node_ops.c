@@ -6,13 +6,13 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 21:20:37 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/08 01:39:13 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/11 13:31:12 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	set_cheapest(t_item *stack)
+void	ft_set_cheapest(t_item *stack)
 {
 	t_item	*cheapest;
 	int		value;
@@ -32,7 +32,7 @@ void	set_cheapest(t_item *stack)
 	cheapest->cheapest = true;
 }
 
-void	update_node_index(t_item *stack)
+void	ft_update_node_index(t_item *stack)
 {
 	int	index;
 	int	median;
@@ -40,7 +40,7 @@ void	update_node_index(t_item *stack)
 	index = 0;
 	if (!stack)
 		return ;
-	median = get_size(stack) / 2;
+	median = ft_get_size(stack) / 2;
 	while (stack)
 	{
 		stack->index = index;
@@ -53,32 +53,32 @@ void	update_node_index(t_item *stack)
 	}
 }
 
-void	set_cheapest_on_top_a(t_item **stack, t_item *top)
+void	ft_set_cheapest_on_top_a(t_item **stack, t_item *top)
 {
 	while (*stack != top)
 	{
 		if (top->above_median)
 		{
-			ra(stack, true);
+			ft_ra(stack, true);
 		}
 		else
 		{
-			rra(stack, true);
+			ft_rra(stack, true);
 		}
 	}
 }
 
-void	set_cheapest_on_top_b(t_item **stack, t_item *top)
+void	ft_set_cheapest_on_top_b(t_item **stack, t_item *top)
 {
 	while (*stack != top)
 	{
 		if (top->above_median)
 		{
-			rb(stack, true);
+			ft_rb(stack, true);
 		}
 		else
 		{
-			rrb(stack, true);
+			ft_rrb(stack, true);
 		}
 	}
 }

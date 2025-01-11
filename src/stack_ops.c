@@ -6,13 +6,13 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 18:19:39 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/08 06:01:54 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/11 13:38:00 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	push(t_item **dst, t_item **src)
+void	ft_push(t_item **dst, t_item **src)
 {
 	t_item	*tmp;
 
@@ -24,7 +24,7 @@ void	push(t_item **dst, t_item **src)
 	*dst = tmp;
 }
 
-void	pop(t_item **stack)
+void	ft_pop(t_item **stack)
 {
 	t_item	*tmp;
 
@@ -35,7 +35,7 @@ void	pop(t_item **stack)
 	free(tmp);
 }
 
-void	fill_stack(t_item **stack, int *numbers, int size)
+void	ft_fill_stack(t_item **stack, int *numbers, int size)
 {
 	int		i;
 	t_item	*new_node;
@@ -43,19 +43,19 @@ void	fill_stack(t_item **stack, int *numbers, int size)
 	i = size - 1;
 	while (i >= 0)
 	{
-		new_node = setup_node((int []){numbers[i], 0, 0}, false, false, NULL);
+		new_node = ft_setup_node((int []){numbers[i], 0, 0}, false, false, NULL);
 		if (!new_node)
 		{
-			free_stack(*stack);
+			ft_free_stack(*stack);
 			free(numbers);
-			error_exit();
+			ft_error_exit();
 		}
-		push(stack, &new_node);
+		ft_push(stack, &new_node);
 		i--;
 	}
 }
 
-t_item	*setup_node(int *values, bool above_median,
+t_item	*ft_setup_node(int *values, bool above_median,
 		bool cheapest, t_item *target)
 {
 	t_item	*node;

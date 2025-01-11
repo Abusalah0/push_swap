@@ -6,13 +6,13 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 00:39:28 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/07 14:36:08 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/11 13:31:59 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-t_item	*get_max(t_item *stack)
+t_item	*ft_get_max(t_item *stack)
 {
 	int		max;
 	t_item	*node_to_return;
@@ -33,7 +33,7 @@ t_item	*get_max(t_item *stack)
 	return (node_to_return);
 }
 
-t_item	*get_min(t_item *stack)
+t_item	*ft_get_min(t_item *stack)
 {
 	int		min;
 	t_item	*node_to_return;
@@ -54,7 +54,7 @@ t_item	*get_min(t_item *stack)
 	return (node_to_return);
 }
 
-int	get_size(t_item *stack)
+int	ft_get_size(t_item *stack)
 {
 	int	size;
 
@@ -67,7 +67,7 @@ int	get_size(t_item *stack)
 	return (size);
 }
 
-t_item	*get_cheapest(t_item *stack)
+t_item	*ft_get_cheapest(t_item *stack)
 {
 	while (stack)
 	{
@@ -78,7 +78,7 @@ t_item	*get_cheapest(t_item *stack)
 	return (NULL);
 }
 
-bool	is_sorted(t_item *stack)
+bool	ft_is_sorted(t_item *stack)
 {
 	t_item	*tmp;
 

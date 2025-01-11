@@ -6,13 +6,13 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 21:10:34 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/08 03:09:51 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/11 13:27:11 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	sa(t_item **stack, bool print)
+void	ft_sa(t_item **stack, bool print)
 {
 	t_item	*tmp;
 
@@ -30,16 +30,16 @@ void	sa(t_item **stack, bool print)
 	}
 }
 
-void	pa(t_item **a_stack, t_item **b_stack, bool print)
+void	ft_pa(t_item **a_stack, t_item **b_stack, bool print)
 {
-	push(a_stack, b_stack);
+	ft_push(a_stack, b_stack);
 	if (print)
 	{
 		ft_putstr_fd("pa\n", 1);
 	}
 }
 
-void	ra(t_item **stack, bool print)
+void	ft_ra(t_item **stack, bool print)
 {
 	t_item	*tmp;
 	t_item	*last;
@@ -61,7 +61,7 @@ void	ra(t_item **stack, bool print)
 	}
 }
 
-void	rra(t_item **stack, bool print)
+void	ft_rra(t_item **stack, bool print)
 {
 	t_item	*tmp;
 	t_item	*last;

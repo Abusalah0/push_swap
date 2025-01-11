@@ -6,7 +6,7 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 21:39:06 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/08 01:45:24 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/11 13:38:58 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@ int	main(int argc, char **argv)
 		return (1);
 	a_stack = NULL;
 	b_stack = NULL;
-	num = check_input(argc, argv);
+	num = ft_check_input(argc, argv);
 	if (!num)
-		error_exit();
-	fill_stack(&a_stack, num, argc - 1);
+		ft_error_exit();
+	ft_fill_stack(&a_stack, num, argc - 1);
 	free(num);
-	sort(&a_stack, &b_stack);
-	free_stack(a_stack);
-	free_stack(b_stack);
+	ft_sort(&a_stack, &b_stack);
+	ft_free_stack(a_stack);
+	ft_free_stack(b_stack);
 	return (0);
 }

@@ -1,7 +1,3 @@
-Here’s the final **README** with all sections included:
-
----
-
 # push_swap
 
 ### Brief  

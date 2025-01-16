@@ -18,7 +18,7 @@ jobs:
       - name: Set up dependencies
         run: |
           sudo apt update
-          sudo apt install -y build-essential libft-dev  # Modify based on your dependencies
+          sudo apt install -y build-essential libft-dev
 
       - name: Build push_swap
         run: |

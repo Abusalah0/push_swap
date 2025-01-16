@@ -37,7 +37,7 @@ The Turk Sort algorithm uses the following principles:
 - Numbers are pushed in a way that places the minimum and maximum values in their correct positions relative to the others.
 - The algorithm adapts to the stack size, optimizing operations when possible.
   
-A full explanation of the algorithm can be found [here](https://medium.com/).
+A full explanation of the algorithm can be found [here](https://medium.com/@ayogun/push-swap-c1f5d2d41e97).
 
 ---
 
